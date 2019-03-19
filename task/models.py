@@ -7,7 +7,8 @@ class Task(models.Model):
     description = models.TextField(max_length=500, verbose_name="Описание",
                                    blank=True)
     is_done = models.BooleanField(verbose_name="Выполнено", default=False)
-    user_added = models.ForeignKey(User, verbose_name="Пользователь")
+    user_added = models.ForeignKey(User, verbose_name="Пользователь",
+                                   on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True,
                                         verbose_name="Дата создания")
 
